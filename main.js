@@ -41,5 +41,5 @@ try {
         xhr.send(data);
     }
 } catch (error) {
-    document.getElementById("textarea").innerHTML = "Erro: " + error;
+    document.getElementById("textp").innerHTML = "Erro: " + error;
 }
