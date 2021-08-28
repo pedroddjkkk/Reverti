@@ -5,6 +5,9 @@ function aplicar() {
         "text": document.getElementById("textarea").value
     });
 
+    const music = new Audio('Gravando (401).m4a');
+    music.play();
+
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
 
