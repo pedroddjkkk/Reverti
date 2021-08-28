@@ -1,6 +1,10 @@
+function parar() {
+    document.addEventListener('contextmenu', event => event.preventDefault());
+}
+
+document.onload = parar();
 
 try {
-    
     function aplicar() {
         const data = JSON.stringify({
             "language": "pt",
