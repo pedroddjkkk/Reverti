@@ -13,7 +13,18 @@ function aplicar() {
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            document.getElementById("textp").innerHTML = this.responseText;
+            let text;
+            let similarity;
+            if (this.responseText === '{"rewrite":"","text":"","language":"pt"}') {
+                text = "O DANILLO! VAMO LA AMANHA LEVA AS CANA PRAS VACA LA VIADO"
+            }
+            else {
+                let obj = JSON.parse(this.responseText)
+                text = obj.rewrite;
+                similarity = obj.similarity;
+                similarity = similarity.toFixed(2);
+            }
+            document.getElementById("textp").innerHTML = `<span>Similaridade: ${similarity}</span><br>${text}`;
             console.log(this.responseText);
         }
     });
